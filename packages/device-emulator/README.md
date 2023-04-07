@@ -1,14 +1,12 @@
-# device-emulator
+# Device-Emulator
 
 ## Overview
 
-The Device Emulator Vue Component is a Vue component that simulates a mobile device screen within a desktop browser. This component can be used to test responsive web design and to see how a website or web application looks on different devices.
-
-The Device Emulator Vue Component is designed to be easily customizable and supports various devices and orientations.
-
 ## Introduction
 
-Device-Emulator is a Vue component that provides a simulation of different mobile and tablet devices to preview a website's responsiveness and layout. It's inspired by the Chrome DevTools Device Mode.
+Device-Emulator is a Vue component that provides a simulation of different mobile and tablet devices to preview a website's responsiveness and layout. This component can be used to test responsive web design and to see how a website or web application looks on different devices.
+
+It's inspired by the Chrome DevTools Device Mode.
 
 ## Features
 
@@ -24,10 +22,11 @@ Device-Emulator is a Vue component that provides a simulation of different mobil
 To install the Device Emulator Vue Component, simply run:
 
 ```bash
-npm install device-emulator --save
-# 或者
-yarn add device-emulator
-
+npm install @vcv/device-emulator
+# or
+yarn add @vcv/device-emulator
+# or
+pnpm add @vcv/device-emulator
 ```
 
 ## Usage
@@ -35,35 +34,33 @@ yarn add device-emulator
 To use the Device Emulator Vue Component, first import it into your Vue component:
 
 ```javascript
-import DeviceEmulator from 'device-emulator-vue'
+import { DeviceEmulator } from '@vcv/device-emulator'
+import '@vcv/device-emulator/style.css'
 ```
 
 Then, simply add the DeviceEmulator component to your template, passing in the device type and orientation as props:
 
-```vue
-<template>
-  <div>
-    <device-emulator :device-type="deviceType">
-      <!-- 在这里放置要测试的内容 -->
-      <p>Hello, world!</p>
-    </device-emulator>
-  </div>
-</template>
+```html
+<script setup lang="ts">
+import { ref } from 'vue'
+import { DeviceEmulator } from '@vcv/device-emulator'
+import '@vcv/device-emulator/style.css'
 
-<script>
-import DeviceEmulator from 'device-emulator'
-
-export default {
-  components: {
-    DeviceEmulator
-  },
-  data() {
-    return {
-      deviceType: 'iPhone X'
-    }
-  }
-}
+const disableScaling = ref(false)
+const width = ref(335)
+const height = ref(667)
 </script>
+
+<template>
+  <DeviceEmulator
+    class="device-emulator"
+    :width="width"
+    :height="height"
+    :disable-scaling="disableScaling"
+  >
+    <!-- Your content here -->
+  </DeviceEmulator>
+</template>
 ```
 
 ## Props
@@ -122,10 +119,8 @@ Here are some examples of how to use the Device Emulator Vue Component:
 </script>
 ```
 
-## Available Devices
-
-TODO
-
 ## License
 
-The Device Emulator Vue Component is open source software licensed under the MIT License.
+Device Emulator is licensed under the terms of the [MIT License](./LICENSE).
+
+Copyright (c) 2023-present Andurils

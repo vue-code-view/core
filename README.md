@@ -12,6 +12,7 @@
 <https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle>
 
 <https://vedanshmehra.hashnode.dev/setting-up-a-monorepo-with-vite-typescript-and-pnpm-workspaces>
+<http://www.kehuanxianshi.com/work/Tools/use-mobile-emulation-mode-chrome.html>
 
 ## import
 

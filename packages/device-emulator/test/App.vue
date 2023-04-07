@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import DeviceEmulator from "../src/DeviceEmulator.vue";
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/MediaQueryToolbar.vue'
+import Ruler from './components/Ruler.vue';
 const disableScaling = ref(false)
 const width = ref(335)
 const height = ref(667)
 </script>
 
 <template>
-  <DeviceEmulator class="device-emulator" :width="width" :height="height" :disable-scaling="disableScaling">
-    <HelloWorld msg="Vite + Vue" />
-  </DeviceEmulator>
+  <Ruler class="content" v-ruler:horizontal="10" v-ruler:vertical="10">
+    <!-- Your content here -->
+
+    <DeviceEmulator class="device-emulator" :width="width" :height="height" :disable-scaling="disableScaling">
+      <HelloWorld msg="Vite + Vue" />
+    </DeviceEmulator>
+  </Ruler>
 </template>
 
 <style scoped>
@@ -30,6 +36,8 @@ const height = ref(667)
 }
 
 .device-emulator {
+  /* width: 80%;
+  height: 40%; */
   background-color: rgb(250, 235, 215, 0.3);
 }
 </style>
