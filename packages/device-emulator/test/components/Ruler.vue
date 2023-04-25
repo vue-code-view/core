@@ -15,7 +15,7 @@ const vRuler = {
         const ruler = document.createElement('div')
         ruler.classList.add('ruler')
         ruler.classList.add(`ruler-${direction}`)
-        const pixels = binding.value || 10
+        const pixels = binding.value || 5
         // console.log('[ window.screen ] >', window.screen, binding)
         const screenKey = direction === 'horizontal' ? 'width' : 'height'
         const screenRange = direction === 'horizontal' ? container.offsetWidth / pixels : container.offsetHeight / pixels
@@ -49,10 +49,10 @@ const vRuler = {
 }
 </script>
 <template>
-    <div class="ruler-container" v-ruler:horizontal="10" v-ruler:vertical="10">
+    <div class="ruler-container" v-ruler:horizontal="5" v-ruler:vertical="5">
         <!-- v-ruler:vertical="10" -->
         <!-- <div class="ruler-horizontal"></div>
-                                                                                                                                                                                                                                                                                                                                    <div class="ruler-vertical"></div> -->
+                                                                                                                                                                                                                                                                                                                                                    <div class="ruler-vertical"></div> -->
         <slot></slot>
     </div>
 </template>
@@ -82,6 +82,7 @@ const vRuler = {
             transparent 1px,
             transparent);
     z-index: 9999;
+    background-color: rgba(32, 32, 35, 1);
 }
 
 .ruler-horizontal .ruler-mark {
@@ -126,6 +127,8 @@ const vRuler = {
             #ccc 1px,
             transparent 1px,
             transparent);
+    background-color: rgba(32, 32, 35, 1);
+
     z-index: 9999;
 }
 

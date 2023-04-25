@@ -30,3 +30,9 @@ pnpm add @vcv/shared
 ```bash
 npm publish --access=public
 ```
+
+## ruler
+<https://github.com/daybrush>
+<https://www.npmjs.com/package/@scena/guides>
+<https://github.com/wusb/slide-ruler>
+<https://chrome.google.com/webstore/detail/liner-the-real-ruler/amciopbgphikbcmaffbmmibnbpiokfic>

@@ -4,19 +4,26 @@ import DeviceEmulator from "../src/DeviceEmulator.vue";
 // import HelloWorld from './components/HelloWorld.vue'
 import HelloWorld from './components/MediaQueryToolbar.vue'
 import Ruler from './components/Ruler.vue';
+import ViewportZoom from './components/ViewportZoom.vue'
+import ResizableContainer from './components/ResizableContainer.vue';
 const disableScaling = ref(false)
 const width = ref(335)
 const height = ref(667)
 </script>
 
 <template>
-  <Ruler class="content" v-ruler:horizontal="10" v-ruler:vertical="10">
-    <!-- Your content here -->
-
-    <DeviceEmulator class="device-emulator" :width="width" :height="height" :disable-scaling="disableScaling">
-      <HelloWorld msg="Vite + Vue" />
-    </DeviceEmulator>
-  </Ruler>
+  <!-- <Ruler class="content" v-ruler:horizontal="10" v-ruler:vertical="10">
+      <DeviceEmulator class="device-emulator" :width="width" :height="height" :disable-scaling="disableScaling">
+        <HelloWorld msg="Vite + Vue" />
+      </DeviceEmulator>
+    </Ruler> -->
+  <!-- <viewport-zoom></viewport-zoom> -->
+  <resizable-container :width="400" :height="300">
+    <!-- 在此处放入需要进行拖动缩放的内容 -->
+    <template #content>
+      在此处放入需要进行拖动缩放的内容
+    </template>
+  </resizable-container>
 </template>
 
 <style scoped>

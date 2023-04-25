@@ -1,17 +1,17 @@
 {
-  "name": "@vcv/device-emulator",
+  "name": "@vcv/grid-ruler",
   "version": "0.0.1",
-  "description": "a Vue component that simulates a mobile device screen within a desktop browser.",
-  "main": "dist/device-emulator.js",
-  "module": "dist/device-emulator.js",
+  "description": "📏A Vue component that can draw ruler ,creates vertical and horizontal grids, Photoshop style.",
+  "main": "dist/ruler.js",
+  "module": "dist/ruler.js",
   "files": [
     "dist"
   ],
-  "types": "dist/device-emulator.d.ts",
+  "types": "dist/ruler.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/device-emulator.js",
-      "types": "./dist/device-emulator.d.ts"
+      "import": "./dist/ruler.js",
+      "types": "./dist/ruler.d.ts"
     },
     "./style.css": "./dist/style.css",
     "./dist/style.css": "./dist/style.css"
