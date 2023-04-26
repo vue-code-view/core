@@ -25,16 +25,19 @@ export default {
             handle.value = event.target;
             startX.value = event.clientX;
             startY.value = event.clientY;
+
             window.addEventListener('mousemove', onMouseMove);
             window.addEventListener('mouseup', onMouseUp);
-            event.preventDefault();
+            // event.preventDefault();
         }
 
         function onMouseMove(event) {
+            // event.preventDefault()
+            // event.stopPropagation();
             if (!handle.value) {
                 return;
             }
-            const dx = event.clientX - startX.value;
+            const dx = (event.clientX - startX.value) * 1.5;
             const dy = event.clientY - startY.value;
             if (handle.value.classList.contains('right')) {
                 width.value += dx;

@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import DeviceEmulator from "../src/DeviceEmulator.vue";
+// import DeviceEmulator from "../src/DeviceEmulator.vue";
 // import HelloWorld from './components/HelloWorld.vue'
-import HelloWorld from './components/MediaQueryToolbar.vue'
-import Ruler from './components/Ruler.vue';
-import ViewportZoom from './components/ViewportZoom.vue'
-import ResizableContainer from './components/ResizableContainer.vue';
-const disableScaling = ref(false)
-const width = ref(335)
-const height = ref(667)
+// import HelloWorld from './components/MediaQueryToolbar.vue'
+// import Ruler from './components/Ruler.vue';
+import ViewporResizer from './components/ViewporResizer.vue'
+import HelloWorld from './components/HelloWorld.vue'
+// import ResizableContainer from './components/ResizableContainer.vue';
+// const disableScaling = ref(false)
+const width = ref(400)
+const height = ref(300)
 </script>
 
 <template>
@@ -18,12 +19,20 @@ const height = ref(667)
       </DeviceEmulator>
     </Ruler> -->
   <!-- <viewport-zoom></viewport-zoom> -->
-  <resizable-container :width="400" :height="300">
+  <ViewporResizer :width="width" :height="height">
     <!-- 在此处放入需要进行拖动缩放的内容 -->
     <template #content>
-      在此处放入需要进行拖动缩放的内容
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" class="logo" alt="Vite logo" />
+        </a>
+        <a href="https://vuejs.org/" target="_blank">
+          <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+        </a>
+      </div>
+      <HelloWorld msg="Vite + Vue" />
     </template>
-  </resizable-container>
+  </ViewporResizer>
 </template>
 
 <style scoped>
